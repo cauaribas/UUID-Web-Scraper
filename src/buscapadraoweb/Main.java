@@ -34,8 +34,6 @@ public class Main {
         return -1;
     }
 
-    
-
     //retorna o próximo estado, dado o estado atual e o símbolo lido
     public static int proximo_estado(char[] alfabeto, int[][] matriz,int estado_atual,char simbolo){
         int simbol_indice = get_char_ref(alfabeto, simbolo);
@@ -53,6 +51,8 @@ public class Main {
         // instancia e usa objeto que captura código-fonte de páginas Web
         CapturaRecursosWeb crw = new CapturaRecursosWeb();
         crw.getListaRecursos().add("https://www.uuidgenerator.net/");
+        crw.getListaRecursos().add("https://www.npmjs.com/package/uuid");
+        crw.getListaRecursos().add("https://en.wikipedia.org/wiki/Universally_unique_identifier");
         ArrayList<String> listaCodigos = crw.carregarRecursos();
 
         String codigoHTML = listaCodigos.get(0);
@@ -65,7 +65,6 @@ public class Main {
                 'c','d','e','f',
                 '-'
         };
-
 
         // mapa de estados
         String[] estados = new String[37];
@@ -209,8 +208,5 @@ public class Main {
         for (String p : palavras_reconhecidas) {
             System.out.println(p);
         }
-
-        // System.out.println(Arrays.toString(estados));
-
     }
 }
